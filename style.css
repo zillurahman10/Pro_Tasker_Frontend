@@ -1,0 +1,86 @@
+/* .primary-btn {
+    background-color: rgb(55, 215, 55);
+} */
+
+.title {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* .service:hover {
+    transform: scale(1);
+} */
+
+.card-animation {
+    transition: border 0.2s ease-in-out;
+    /* Transition for when the cursor leaves */
+}
+
+.card-animation:hover {
+    transition: border 0.2s ease-in-out;
+    /* Transition for when the cursor hovers */
+    border: 2px solid rgb(99, 204, 216);
+    cursor: pointer;
+}
+
+* {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.animated-btn {
+    --color: #4bbee8;
+    font-family: inherit;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 2.5em;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    color: black;
+    border: 1px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 11px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+}
+
+.animated-btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.animated-btn:hover {
+    color: #fff;
+}
+
+.animated-btn:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+
+.animated-btn:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+.animated-btn:active:before {
+    background: #186883;
+    transition: background 0s;
+}
+
+.normal-text{
+    flex-grow: 0;
+}
