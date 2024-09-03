@@ -84,3 +84,36 @@
 .normal-text{
     flex-grow: 0;
 }
+
+.my-input{
+    width: 333px;
+    border: none;
+    margin: 10px;
+    
+}
+
+.my-form{
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.my-input-big{
+    width: 94%;
+    border: none;
+    margin: 10px;
+}
+
+.my-form-login {
+    margin-top: 60px;
+    width: 25%;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.my-input-login {
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+}
+

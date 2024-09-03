@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="garden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="bg-gray-300 mx-auto mt-5" style="width: 95%; border-radius: 20px;">
+        <div class="navbar">
+            <div class="flex-1">
+                <!-- <a class="btn btn-ghost text-xl"><img style="width: 150px;" src="images/Pro_tasker_logo.png" alt=""></a> -->
+                <a href="index.html" class="btn btn-ghost text-xl font-bold">Pro Tasker</a>
+            </div>
+            <div class="flex-none gap-2">
+                <!-- <button class="btn btn-neutral rounded-xl btn-sm primary-btn">Post Proposal</button> -->
+                <div class="dropdown dropdown-end">
+                    <!-- <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="Tailwind CSS Navbar component"
+                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li><a>Profile</a></li>
+                        <li><a>Logout</a></li>
+                    </ul> -->
+                    <div class="flex items-center">
+                        <a href="">
+                            <button class="btn btn-neutral btn-outline btn-sm mr-4">Sign In</button>
+                        </a>
+                        <p class="mr-4"> | </p>
+                        <a href="regsiter.html">
+                            <button class="btn btn-active btn-sm mr-4">Sign Up</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="" style="margin-top: 100px;">
+        <form action="" onsubmit="handleLogin(event)" class="my-form-login shadow-xl p-5">
+            <h1 class=" mt-5 mb-5 text-2xl font-bold">Login</h1>
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" name="username" id="username_login" class="my-input-login rounded" required>
+            </div>
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" id="password_login" class="my-input-login rounded" required>
+                </div>
+            <p class="ml-2 mb-5">Don't have an account ? <a style="text-decoration: underline; color: blue;" href="regsiter.html">Create Now</a></p>
+
+            <input class="btn btn-outline btn-wide" style="width: 100%;" type="submit" value="Login">
+        </form>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <script src="filtered_freelancers.js"></script>
+</body>
+</html>
