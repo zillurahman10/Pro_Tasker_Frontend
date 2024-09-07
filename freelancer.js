@@ -21,7 +21,7 @@ const displayFreelancers = (data) => {
         userData.then(info => {
             const div = document.createElement('div');
             div.innerHTML = `
-        <div style="" class="border shadow p-5 rounded-xl shadow hover:shadow-xl">
+        <div style="" class="border shadow p-5 rounded-xl shadow bg-white">
             <div>
                 <img class="" style="width:200px; height:200px; border-radius: 10px" src="${element?.image}" alt="">
             </div>

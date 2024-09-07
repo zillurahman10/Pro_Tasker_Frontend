@@ -45,14 +45,14 @@ const displayFreelancers = (data) => {
             console.log('User data', data);
             const div = document.createElement('div')
             div.innerHTML = `
-                <div style="" class="border shadow p-5 rounded-xl shadow">
+                <div style="" class="border shadow p-5 rounded-xl shadow bg-white">
                     <div>
                         <img class="" style="width:200px; height:200px; border-radius: 10px" src="${element?.image}" alt="">
                     </div>
                     <div>
                         <h4 class="mt-3 font-bold">${data?.first_name} ${data?.last_name}</h4>
                         <p class="mt-1"><small>Ratings: </small>${element?.rating}</p>
-                        <button class="mt-2 animated-btn">
+                        <button class="mt-2 btn btn-neutral btn-outline btn-sm">
                             <a href="freelancerDetails.html?freelancerId=${element.id}">View Details ></a>
                         </button>
                     </div>

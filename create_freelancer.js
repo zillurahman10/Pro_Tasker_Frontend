@@ -11,19 +11,17 @@ async function loadSkills() {
   return data;
 }
 
-
 const freelancer_form = async () => {
   const div = document.getElementById("freelancer-form");
   const categories = await loadCategories();
   const skills = await loadSkills();
   console.log(categories);
 
-
-
-
   div.innerHTML = `
         <form
             action=""
+            method="post"
+            enctype="multipart/form-data"
             onsubmit="create_freelancer(event)"
             class="my-form shadow-xl p-5"
         >
@@ -37,6 +35,7 @@ const freelancer_form = async () => {
                 <input
                     type="file"
                     name="username"
+                    placeholder="Please place a photo link"
                     id="freelancer_image"
                     class="my-input-big rounded"
                     required
@@ -72,7 +71,12 @@ const freelancer_form = async () => {
                     What Profession are you in ?
                 </label>
                 <select class=" rounded w-full max-w-xs" id="categories" multiple>
-                ${categories.map(category => `<option value="${category.category_name}">${category.category_name}</option>`).join('')}
+                ${categories
+                  .map(
+                    (category) =>
+                      `<option value="${category.category_name}">${category.category_name}</option>`
+                  )
+                  .join("")}
                 </select>
             </div>
             <div class="mb-4 ml-3">
@@ -80,7 +84,12 @@ const freelancer_form = async () => {
                     What skills do you have ?
                 </label>
                 <select class=" rounded w-full max-w-xs" id="skills" multiple>
-                ${skills.map(skill => `<option value="${skill.skill_name}">${skill.skill_name}</option>`).join('')}
+                ${skills
+                  .map(
+                    (skill) =>
+                      `<option value="${skill.skill_name}">${skill.skill_name}</option>`
+                  )
+                  .join("")}
                 </select>
             </div>
             </div>
@@ -107,6 +116,7 @@ const freelancer_form = async () => {
                 </label>
                 <input
                     type="file"
+                    placeholder="Please place a photo link"
                     name="username"
                     id="portfolio_image"
                     class="my-input-big rounded"
@@ -148,19 +158,111 @@ const freelancer_form = async () => {
 };
 
 const create_freelancer = (event) => {
-    event.preventDefault();
-    const freelancer_image = document.getElementById("freelancer_image").value;
-    const about = document.getElementById("about").value;
-    const location = document.getElementById("location").value;
-    const categories = document.getElementById("categories");
-    const selected_categories = Array.from(categories.selectedOptions).map(option => option.value)
-    const skills = document.getElementById("skills");
-    const selected_skills = Array.from(skills.selectedOptions).map(option => option.value)
-    const portfolio_name = document.getElementById("portfolio_name").value;
-    const portfolio_image = document.getElementById("portfolio_image").value;
-    const description = document.getElementById("portfolio_description").value;
-    const live_link = document.getElementById("live_link").value;
-    console.log(freelancer_image, about, location, selected_categories, selected_skills, portfolio_name, portfolio_image, description, live_link)
-}
+  event.preventDefault();
+  const freelancer_image = document.getElementById("freelancer_image").files[0];
+  const about = document.getElementById("about").value;
+  const location = document.getElementById("location").value;
+  const categories = document.getElementById("categories");
+  const selected_categories = Array.from(categories.selectedOptions).map(
+    (option) => option.value
+  );
+  const skills = document.getElementById("skills");
+  const selected_skills = Array.from(skills.selectedOptions).map(
+    (option) => option.value
+  );
+  const portfolio_name = document.getElementById("portfolio_name").value;
+  const portfolio_image = document.getElementById("portfolio_image").files[0];
+  const description = document.getElementById("portfolio_description").value;
+  const live_link = document.getElementById("live_link").value;
+  console.log({
+    selected_categories,
+    selected_skills,
+    freelancer_image,
+    about,
+    location,
+    portfolio_name,
+    portfolio_image,
+    description,
+    live_link,
+  });
+
+  //   const data = {
+  //     selected_categories,
+  //     selected_skills,
+  //     freelancer_image,
+  //     about,
+  //     location,
+  //     portfolio_name,
+  //     portfolio_image,
+  //     description,
+  //     live_link,
+  //   };
+
+  console.log(freelancer_image);
+  console.log(portfolio_image);
+  const formData = new FormData();
+  formData.append("image", freelancer_image);
+
+  fetch("https://api.imgbb.com/1/upload?key=f5fb8576323ae406878d203b40597495", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((freelancer_img) => {
+        const formDataPortofolio = new FormData();
+        formDataPortofolio.append("image", portfolio_image);
+      fetch(
+        "https://api.imgbb.com/1/upload?key=f5fb8576323ae406878d203b40597495", {
+            method: "POST",
+            body: formDataPortofolio,
+        })
+        .then((response) => response.json())
+        .then((portfolio_img) => {
+
+            console.log(portfolio_img);
+          const freelancer_photo = freelancer_img.data.display_url;
+          const portfolio_photo = portfolio_img.data.display_url;
+
+          const portfolioData = {
+            portfolio_name,
+            portfolio_photo,
+            description,
+            live_link,
+          } 
+
+          fetch('http://127.0.0.1:8000/portfolios/', {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(portfolioData),
+          })
+           .then((response) => response.json())
+           .then((data) => console.log(data))
+
+          const data = {
+            selected_categories,
+            selected_skills,
+            freelancer_photo,
+            about,
+            location,
+            
+          };
+
+        //   fetch("http://127.0.0.1:8000/freelancers/", {
+        //     method: "POST",
+        //     headers: {
+        //       "content-type": "application/json",
+        //     },
+        //     body: JSON.stringify(data),
+        //   })
+        //     .then((response) => response.json())
+        //     .then((data) => console.log(data))
+        //     .catch((error) => console.error("Error:", error));
+        });
+    });
+
+  // Add freelancer data to the server here
+};
 
 freelancer_form();
