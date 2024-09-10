@@ -25,11 +25,13 @@ const displayCategories = (data) => {
 
 const navbar = () => {
     const div = document.getElementById("my-navbar")
+    const user_type = localStorage.getItem("user_type");
     if(localStorage.getItem("token")){
         div.innerHTML = `
         <div>
-        <a href="projects.html" class="mr-3">Projects</a>
-        <a href="freelancer.html" class="mr-3">Freelancers</a>
+        <a href="projects.html" class="btn btn-sm">Projects</a>
+        <a href="freelancer.html" class="btn btn-sm">Freelancers</a>
+        ${user_type == "Freelancer" ? "" : '<a href="create_project.html" class="btn-sm btn">Post Project</a>'}
         </div>
                 <div class="dropdown dropdown-end mr-3">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
@@ -40,8 +42,10 @@ const navbar = () => {
                     </div>
                     <ul tabindex="0"
                         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Profile</a></li>
-                        <li><a href="create_freelancer.html">Be A Freelancer</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        ${user_type === "Freelancer" ? "" : '<li id="create_freelancer"><a href="create_freelancer.html">Be A Freelancer</a></li>'}
+
+                        
                         <li onclick="handleLogout()"><a>Logout</a></li>
                     </ul>
                     
@@ -65,6 +69,19 @@ const navbar = () => {
     }
 }
 
+const handleCreateFreelancer = () => {
+    const nav_freelancer = document.getElementById("create_freelancer")
+    if(localStorage.getItem("is_freelancer") === "Yes"){
+        nav_freelancer.innerHTML = ""
+    }
+    else{
+        nav_freelancer.innerHTML = `<a href="create_freelancer.html">Be A Freelancer</a>`
+    }
+}
+
+// handleCreateFreelancer
+
 navbar()
 
 loadCategoriesHome()
+

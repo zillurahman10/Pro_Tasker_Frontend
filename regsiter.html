@@ -78,6 +78,14 @@
                     <input type="password" name="confirm-password" id="confirm_password" class="my-input rounded" required>
                 </div>
             </div>
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700 ml-2">What are you ?</label>
+                <select class="select select-bordered bg-white my-input-big">
+                    <option disabled selected>Select</option>
+                    <option>Client</option>
+                    <option>Freelancer</option>
+                  </select>
+            </div>
             <p class="ml-2 mb-5">Already have an account <a style="text-decoration: underline; color: blue;" href="login.html">Login Now</a></p>
 
             <input class="btn btn-outline btn-wide" style="width: 100%;" type="submit" value="Create">
@@ -97,6 +105,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         AOS.init();
     </script>

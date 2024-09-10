@@ -53,7 +53,6 @@
                 <!-- category card -->
             </div>
         </section>
-
         <footer class="footer bg-base-300 text-base-content p-10">
             <nav>
                 <h6 class="footer-title">Services</h6>
@@ -101,6 +100,7 @@
         </footer>
     </main>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -112,6 +112,23 @@
             }
         }
     </script>
+    <script>
+        function showToastRegister() {
+          Swal.fire({
+            icon: 'info', // You can use 'success', 'error', 'info', 'warning'
+            title: 'Operation successful',
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          });
+        }
+      </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

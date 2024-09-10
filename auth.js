@@ -25,7 +25,11 @@ const handleRegister = (event) => {
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
-    .then((data) => alert(data.message))
+    .then((data) => {
+      if(data.message) {
+        showToastRegister(data.message);
+      }
+    })
     .catch((error) => {
       console.error("Error:", error);
     });
@@ -53,11 +57,16 @@ const handleLogin = (event) => {
         if(data.token){
             localStorage.setItem("token", data.token);
             localStorage.setItem("user_id", data.user_id);
-            location.replace("http://127.0.0.1:5500/index.html")
+            if(localStorage.getItem("user_type")){
+              location.replace('http://127.0.0.1:5500/index.html')
+            }
+            else {
+              location.replace("http://127.0.0.1:5500/more_info.html")
+            }
         }
     })
     .catch((error) => {
-      console.error("Error:", error);
+      console.error(alert(error.message));
     });
 };
 
@@ -66,4 +75,20 @@ const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user_id");
     location.reload()
+}
+
+function showToastRegister(message) {
+  Swal.fire({
+    icon: 'info', // You can use 'success', 'error', 'info', 'warning'
+    title: message,
+    toast: true,
+    position: 'top',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  });
 }

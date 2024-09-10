@@ -24,26 +24,59 @@
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>Create Freelancer</title>
+    <title>Document</title>
   </head>
   <body>
-    <nav
-      class="bg-gray-300 mx-auto mt-5"
-      style="width: 95%; border-radius: 20px"
-    >
-      <div class="navbar">
-        <div class="flex-1">
-          <!-- <a class="btn btn-ghost text-xl"><img style="width: 150px;" src="images/Pro_tasker_logo.png" alt=""></a> -->
-          <a href="index.html" class="btn btn-ghost text-xl font-bold"
-            >Pro Tasker</a
-          >
+    <nav class="bg-gray-300 mx-auto mt-5" style="width: 95%; border-radius: 20px;"></nav>
+        <div class="navbar">
+            <div class="flex-1">
+                <a href="index.html" class="btn btn-ghost text-xl font-bold">Pro Tasker</a>
+            </div>
+            <div class="flex-none gap-2" id="my-navbar">
+                
+            </div>
         </div>
-        <div class="flex-none gap-2" id="my-navbar"></div>
-      </div>
     </nav>
+    <div class="mt-5">
+      <form
+        action=""
+        onsubmit="postProposal(event)"
+        class="my-form shadow-xl p-5 mt-5"
+      >
+        <h1 class="ml-2 mt-5 mb-5 text-2xl font-bold">Post Your Proposal</h1>
+        
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700 ml-2"
+            >Bid</label
+          >
+          <input
+            type="number"
+            name="bid"
+            id="bid"
+            class="my-input-big rounded"
+            required
+          />
+        </div>
+        <div class="">
+            <label for="name" class="block text-sm font-medium text-gray-700 ml-2"
+              >Cover Letter</label
+            >
+            <textarea
+              type="text"
+              name="cover_letter"
+              id="cover_letter"
+              class="my-input-big rounded"
+              required
+            ></textarea>
+          </div>
 
-    <div class="mt-5" id="freelancer-form">
-      
+        <input
+          class="btn btn-outline btn-wide"
+          style="width: 100%"
+          type="submit"
+          value="Post"
+        />
+      </form>
     </div>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -59,13 +92,13 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="proposal.js"></script>
     <script>
       AOS.init();
     </script>
     <script src="app.js"></script>
+    <script src="auth.js"></script>
     <script src="toast.js"></script>
-    <!-- <script src="auth.js"></script> -->
-    <script src="create_freelancer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
