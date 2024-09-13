@@ -5,21 +5,21 @@ const getId = () => {
 
 const loadFreelancer = () => {
   const params = getId()
-  fetch(`http://127.0.0.1:8000/freelancers/${params}`)
+  fetch(`https://pro-tasker-backend-1.onrender.com/freelancers/${params}`)
     .then(res => res.json())
     .then(data => displayFreelancer(data))
 }
 
 async function findFreelancersUserData(id) {
 
-  const response = await fetch(`http://127.0.0.1:8000/users/${id}`);
+  const response = await fetch(`https://pro-tasker-backend-1.onrender.com/users/${id}`);
   const data = await response.json();
   return data;
 
 }
 
 async function loadPortfolio(id) {
-  const response = await fetch(`http://127.0.0.1:8000/portfolios/${id}`);
+  const response = await fetch(`https://pro-tasker-backend-1.onrender.com/portfolios/${id}`);
   const data = await response.json();
   console.log(typeof data);
   return data;

@@ -13,27 +13,13 @@
     <title>About us</title>
 </head>
 <body>
-    <nav class="bg-gray-300 mx-auto mt-5" style="width: 95%; border-radius: 20px;">
+    <nav class="bg-gray-300 mx-auto mt-5" style="width: 95%; border-radius: 20px;"></nav>
         <div class="navbar">
             <div class="flex-1">
-                <!-- <a class="btn btn-ghost text-xl"><img style="width: 150px;" src="images/Pro_tasker_logo.png" alt=""></a> -->
-                <a class="btn btn-ghost text-xl font-bold">Pro Tasker</a>
+                <a href="index.html" class="btn btn-ghost text-xl font-bold">Pro Tasker</a>
             </div>
-            <div class="flex-none gap-2">
-                <button class="btn btn-neutral rounded-xl btn-sm primary-btn">Post Proposal</button>
-                <div class="dropdown dropdown-end">
-                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-                        <div class="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                        </div>
-                    </div>
-                    <ul tabindex="0"
-                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Profile</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
+            <div class="flex-none gap-2" id="my-navbar">
+                
             </div>
         </div>
     </nav>
@@ -64,5 +50,7 @@
     <script>
         AOS.init();
     </script>
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

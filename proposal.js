@@ -22,7 +22,7 @@ const postProposal = (event) => {
 
     console.log(data);
 
-    fetch('http://127.0.0.1:8000/proposals/', {
+    fetch('https://pro-tasker-backend-1.onrender.com/proposals/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const postProposal = (event) => {
     .then(data => {
         if(data.id) {
             showToastSuccess("Proposal Posted Successfully")
-            location.replace('http://127.0.0.1:5500/profile.html')
+            location.replace('https://pro-tasker-zr.netlify.app/profile.html')
         }
     })
 }

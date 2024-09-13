@@ -1,12 +1,12 @@
 // Ensure this function is declared only once
 async function loadCategories() {
-  const response = await fetch("http://127.0.0.1:8000/categories/");
+  const response = await fetch("https://pro-tasker-backend-1.onrender.com/categories/");
   const data = await response.json();
   return data;
 }
 
 async function loadSkills() {
-  const response = await fetch("http://127.0.0.1:8000/skills/");
+  const response = await fetch("https://pro-tasker-backend-1.onrender.com/skills/");
   const data = await response.json();
   return data;
 }
@@ -203,7 +203,7 @@ const create_freelancer = (event) => {
             link: live_link,
           };
 
-          fetch("http://127.0.0.1:8000/portfolios/", {
+          fetch("https://pro-tasker-backend-1.onrender.com/portfolios/", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -225,7 +225,7 @@ const create_freelancer = (event) => {
 
               console.log(JSON.stringify(freelancerData));
 
-              fetch("http://127.0.0.1:8000/freelancers/", {
+              fetch("https://pro-tasker-backend-1.onrender.com/freelancers/", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",
@@ -238,7 +238,7 @@ const create_freelancer = (event) => {
                     localStorage.setItem("freelancer_id", data.id);
                     localStorage.setItem("user_type", "Freelancer");
                     showToastSuccess("Freelancer Created Successfully");
-                    window.location.replace('http://127.0.0.1:5500/index.html')
+                    window.location.replace('https://pro-tasker-zr.netlify.app/index.html')
                   }
                 })
                 .catch((error) => console.error("Error:", error));

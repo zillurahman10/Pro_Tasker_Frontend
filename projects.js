@@ -1,17 +1,17 @@
 const loadProjects = () => {
-    fetch('http://127.0.0.1:8000/projects/')
+    fetch('https://pro-tasker-backend-1.onrender.com/projects/')
        .then(res => res.json())
        .then(data => displayProjects(data))
 }
 
 async function loadClientData (id) {
-    const response = await fetch(`http://127.0.0.1:8000/clients/${id}`);
+    const response = await fetch(`https://pro-tasker-backend-1.onrender.com/clients/${id}/`);
     const data = await response.json();
     return data;
 }
 
 async function loadUserData (id) {
-    const response = await fetch(`http://127.0.0.1:8000/users/${id}`);
+    const response = await fetch(`https://pro-tasker-backend-1.onrender.com/users/${id}/`);
     const data = await response.json();
     return data;
 }
@@ -53,7 +53,7 @@ const displayProjects = async (data) => {  // Mark as async
 }
 
 const loadCategoriesProject = () => {
-    fetch('http://127.0.0.1:8000/categories/')
+    fetch('https://pro-tasker-backend-1.onrender.com/categories/')
        .then(res => res.json())
        .then(data => displayCategoriesProject(data))
 }
@@ -82,7 +82,7 @@ const getParams = () => {
 const displayProjectsByCategory = (params) => {
     // const params = getParams()
     console.log(params);
-    fetch(`http://127.0.0.1:8000/projects/?search=${params}`)
+    fetch(`https://pro-tasker-backend-1.onrender.com/projects/?search=${params}`)
        .then(res => res.json())
        .then(data => displayProjects(data))
 }

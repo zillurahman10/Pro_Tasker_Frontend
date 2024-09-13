@@ -5,18 +5,18 @@ const getParamsId = () => {
 
 const loadProjectDetails = () => {
     const id = getParamsId()
-    fetch(`http://127.0.0.1:8000/projects/${id}`)
+    fetch(`https://pro-tasker-backend-1.onrender.com/projects/${id}/`)
        .then(res => res.json())
        .then(data => displayProjectDetails(data))
 }
 
 async function findClientData (id) {
-    const response = await fetch(`http://127.0.0.1:8000/clients/${id}`);
+    const response = await fetch(`https://pro-tasker-backend-1.onrender.com/clients/${id}/`);
     const data = await response.json();
     return data;
 }
 async function findUserData (id) {
-    const response = await fetch(`http://127.0.0.1:8000/users/${id}`);
+    const response = await fetch(`https://pro-tasker-backend-1.onrender.com/users/${id}/`);
     const data = await response.json();
     return data;
 }

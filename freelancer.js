@@ -1,12 +1,12 @@
 const loadFreelancers = () => {
-    fetch('http://127.0.0.1:8000/freelancers')
+    fetch('https://pro-tasker-backend-1.onrender.com/freelancers')
        .then(response => response.json())
        .then(data => displayFreelancers(data))
 }
 
 async function findFreelancersUserData(id) {
 
-    const response = await fetch(`http://127.0.0.1:8000/users/${id}`);
+    const response = await fetch(`https://pro-tasker-backend-1.onrender.com/users/${id}`);
     const data = await response.json();
     return data;
 

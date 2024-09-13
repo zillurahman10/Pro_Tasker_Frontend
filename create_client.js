@@ -20,7 +20,7 @@ const createClient = (event) => {
             user: Number(user)
         };
 
-        fetch('http://127.0.0.1:8000/clients/', {
+        fetch('https://pro-tasker-backend-1.onrender.com/clients/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

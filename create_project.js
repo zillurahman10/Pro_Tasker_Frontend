@@ -1,5 +1,5 @@
 async function loadCategories (id) {
-    const response = await fetch(`http://127.0.0.1:8000/categories/`);
+    const response = await fetch(`https://pro-tasker-backend-1.onrender.com/categories/`);
     const data = await response.json();
     return data;
 }
@@ -95,7 +95,7 @@ const create_project = (event) => {
 
         console.log(data);
 
-        fetch('http://127.0.0.1:8000/projects/', {
+        fetch('https://pro-tasker-backend-1.onrender.com/projects/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -107,7 +107,7 @@ const create_project = (event) => {
             console.log(data);
             if(data.id){
                 showToastProject('Project created successfully');
-                window.location.replace('http://127.0.0.1:5500/projects.html')
+                window.location.replace('https://pro-tasker-zr.netlify.app/projects.html')
             }
         })
     })

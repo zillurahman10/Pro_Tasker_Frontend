@@ -15,9 +15,10 @@ const handleRegister = (event) => {
     password,
     confirm_password,
   };
-  console.log();
+  console.log(JSON.stringify(data));
 
-  fetch("http://127.0.0.1:8000/register/", {
+
+  fetch("https://pro-tasker-backend-1.onrender.com/register/", {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -45,7 +46,7 @@ const handleLogin = (event) => {
     password,
   };
 
-  fetch("http://127.0.0.1:8000/login/", {
+  fetch("https://pro-tasker-backend-1.onrender.com/login/", {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -58,10 +59,10 @@ const handleLogin = (event) => {
             localStorage.setItem("token", data.token);
             localStorage.setItem("user_id", data.user_id);
             if(localStorage.getItem("user_type")){
-              location.replace('http://127.0.0.1:5500/index.html')
+              location.replace('https://pro-tasker-zr.netlify.app/index.html')
             }
             else {
-              location.replace("http://127.0.0.1:5500/more_info.html")
+              location.replace("https://pro-tasker-zr.netlify.app/more_info.html")
             }
         }
     })
