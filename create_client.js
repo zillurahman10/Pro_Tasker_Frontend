@@ -19,7 +19,7 @@ const createClient = (event) => {
             country,
             user: Number(user)
         };
-
+        console.log(data);
         fetch('https://pro-tasker-backend-1.onrender.com/clients/', {
             method: 'POST',
             headers: {

@@ -48,19 +48,19 @@ const displayProjectDetails = async (data) => {
                         <p class="text-xl font-bold text-center mt-4">$${data?.budget}</p>
                     </div>
                 </div>  
-                <div class="m-5 bg-white p-5 rounded-xl">
+                <div class="m-5 bg-white  p-5 rounded-xl">
                     <div style="width: 800px">
                         <p class="font-bold mb-3">Project Description</p>
                         <p>${data?.description}</p>
                     </div>
                 </div> 
-                <div class="m-5 bg-white p-5 rounded-xl">
+                <div class="m-5 bg-white  p-5 rounded-xl">
                     <div style="width: 800px">
                         <p class="font-bold mb-3">Project Requirements</p>
                         <p>${data?.project_requirements}</p>
                     </div>
                 </div> 
-                <div class="m-5 bg-white p-5 rounded-xl">
+                <div class="m-5 bg-white  p-5 rounded-xl">
                     <div style="width: 800px">
                         <p class="font-bold mb-3">Project Attachments</p>
                         <img src="${data?.attachments}" width="30%" class="rounded" alt=""/>
@@ -68,8 +68,8 @@ const displayProjectDetails = async (data) => {
                 </div> 
             </div>
             
-            <div class="border m-5" style="width: 30%">
-                <div class="bg-white m-5 rounded-xl">
+            <div class="m-5" style="width: 30%">
+                <div class="bg-white   m-5 rounded-xl">
                     <div style="margin:" class="p-5">
                         <img src="" alt=""/>
                         <p class="font-bold">${userData?.first_name} ${userData?.last_name}</p>

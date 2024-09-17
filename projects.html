@@ -14,47 +14,53 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="bg-gray-300 mx-auto mt-5" style="width: 95%; border-radius: 20px;">
+    <nav class="mx-auto mt-5 bg-gray-300" style="width: 95%; border-radius: 20px;">
         <div class="navbar">
-            <div class="flex-1">
-                <a href="index.html" class="btn btn-ghost text-xl font-bold">Pro Tasker</a>
-            </div>
+          <div class="flex-1" style="display: flex; align-items: center; gap: 5px;">
+            <a href="index.html" class="flex text-xl font-bold btn-ghost btn">
+                
+                Pro Tasker
+            </a>
+        </div>        
             <div class="flex-none gap-2" id="my-navbar">
                 
             </div>
         </div>
     </nav>
 
-    <div class="drawer lg:drawer-open" style="margin-left: 40px; margin-top: 20px;">
-        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content" style="width: 100%;">
-            <div id="projects" style="width: 85%;">
+    <div style="margin-left: 30px;">
 
+        <div class="drawer lg:drawer-open" style="margin-top: 20px; ">
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content" style="width:100%">
+                <div id="projects" style="width: 85%;">
+    
+                </div>
+              <label for="my-drawer-2" class="btn btn-neutral drawer-button lg:hidden">
+                Filter
+              </label>
             </div>
-          <label for="my-drawer-2" class="btn btn-neutral drawer-button lg:hidden">
-            Filter
-          </label>
-        </div>
-        <div class="drawer-side rounded-xl">
-          <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-          <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-            <h4 class="font-bold ml-5 mt-4">Sort by budget</h4>
-            <li style="width: 200px; margin-left: 20px; margin-top: 10px;"><input type="range" min="0" max="100" value="0" class="range range-xs" step="25" />
-                <div class="flex w-full justify-between px-2 text-xs">
-                  <span>10</span>
-                  <span>40</span>
-                  <span>60</span>
-                  <span>80</span>
-                  <span>100</span>
-                </div></li>
-            <h4 class="ml-5 mt-5 font-bold">Filter by category</h4>
-            <div id="categories-filter">
+            <div class="drawer-side rounded-xl">
+              <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+              <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                <h4 class="font-bold ml-5 mt-4">Sort by budget</h4>
+                <li style="width: 200px; margin-left: 20px; margin-top: 10px;"><input type="range" min="0" max="100" value="0" class="range range-xs" step="25" />
+                    <div class="flex w-full justify-between px-2 text-xs">
+                      <span>10</span>
+                      <span>40</span>
+                      <span>60</span>
+                      <span>80</span>
+                      <span>100</span>
+                    </div></li>
+                <h4 class="ml-5 mt-5 font-bold">Filter by category</h4>
+                <div id="categories-filter">
+                    
+                </div>
                 
+              </ul>
             </div>
-            
-          </ul>
-        </div>
-      </div>
+          </div>
+    </div>
 
     
     <script src="https://cdn.tailwindcss.com"></script>

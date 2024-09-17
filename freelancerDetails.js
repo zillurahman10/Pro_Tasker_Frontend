@@ -5,7 +5,7 @@ const getId = () => {
 
 const loadFreelancer = () => {
   const params = getId()
-  fetch(`https://pro-tasker-backend-1.onrender.com/freelancers/${params}`)
+  fetch(`https://pro-tasker-backend-1.onrender.com/freelancers/${params}/`)
     .then(res => res.json())
     .then(data => displayFreelancer(data))
 }

@@ -24,7 +24,7 @@ async function loadPortfolioData(params) {
 }
 
 async function loadProjectData(params) {
-    const response = await fetch(`https://pro-tasker-backend-1.onrender.com/projects/${params}`);
+    const response = await fetch(`https://pro-tasker-backend-1.onrender.com/projects/${params}/`);
     const data = await response.json();
     return data;
 }
